@@ -45,3 +45,11 @@ def Sports():
 
     all_sports=articles_category('sports')
     return render_template("sports.html",sports=all_sports,my_sources=sourcess)
+
+
+@main.route('/technology')
+def technology():
+    """method to fetch technology data"""
+    technology_news=articles_category('technology')
+    sourcess = get_source_news()
+    return  render_template('technology.html',technology=technology_news,my_sources=sourcess)
