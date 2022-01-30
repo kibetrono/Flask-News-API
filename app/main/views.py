@@ -53,3 +53,13 @@ def technology():
     technology_news=articles_category('technology')
     sourcess = get_source_news()
     return  render_template('technology.html',technology=technology_news,my_sources=sourcess)
+
+
+
+@main.route('/bussiness')
+def bussiness():
+    """method to fetch bussiness data"""
+    sourcess=get_source_news()
+
+    all_bussinesses=articles_category('business')
+    return render_template("bussiness.html",bussiness=all_bussinesses,my_sources=sourcess)
