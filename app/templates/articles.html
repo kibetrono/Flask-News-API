@@ -1,0 +1,52 @@
+{%extends 'base.html'%} {% import 'macros.html' as macro%}
+<!-- Styles block -->
+
+
+<!-- Content block -->
+{% block content %}
+<div class="container-fluid">
+<div class="top_section_index"></div>
+
+    <!---------------------sources---------------------------->
+    <div>
+
+        <div class="row" >
+
+                <div class="row ">
+                    <h3 class="text-center"> <u>ALL NEWS:</u></h3>
+                    {{ macro.displayArticles(articles) }}
+                </div>
+
+
+        </div>
+
+    </div>
+
+
+
+
+    {% endblock%}
+
+
+
+</div>
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{%for article in articles%}
+<ul>
+    <img src="{{article.urlToImage}}" alt="{{article.title}}">
+<!--    <li>{{article.urlToImage}}</li>-->
+</ul>
+{%endfor%}
+</body>
+</html>
