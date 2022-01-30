@@ -1,0 +1,48 @@
+img {
+    width: 100%;
+    height: 200px;
+}
+
+body {
+            font-family: 'Times New Roman', Times, serif;
+
+}
+
+#nav {
+    background-color: #FC893D !important;
+    /* background-color: #03045e !important; */
+    color:#ffffff
+}
+u{
+    color: #FC893D !important;
+}
+ul li a{
+    color: #ffffff;
+}
+.top_section_sports{
+    min-height: 8vh !important;
+}
+.top_section_index{
+    min-height: 8vh !important;
+}
+form{
+margin-top:25px;
+}
+input{
+height:40px;
+}
+
+.section {
+background-color: #ffffff; 
+padding: 10px;
+border-radius:20px
+}
+.section_two{
+background-color: #EEEEEE; 
+padding: 10px;   
+
+}
+button{
+padding:5px;
+font-size:15px
+}
