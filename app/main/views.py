@@ -37,3 +37,11 @@ def general():
     general_news=articles_category('general')
     sourcess = get_source_news()
     return  render_template('general.html',general=general_news,my_sources=sourcess)
+
+@main.route('/sports')
+def Sports():
+    """method to fetch sports data"""
+    sourcess=get_source_news()
+
+    all_sports=articles_category('sports')
+    return render_template("sports.html",sports=all_sports,my_sources=sourcess)
