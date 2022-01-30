@@ -27,3 +27,13 @@ def articles(source):
     article=get_articles_news(source)
     title = "Flask News Application"
     return render_template("articles.html",title=title,articles=article)
+
+
+
+# Category
+@main.route('/general')
+def general():
+    """method to fetch general data"""
+    general_news=articles_category('general')
+    sourcess = get_source_news()
+    return  render_template('general.html',general=general_news,my_sources=sourcess)
