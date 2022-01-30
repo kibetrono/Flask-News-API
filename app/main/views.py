@@ -20,3 +20,10 @@ def index():
                                my_sources=sourcess,my_bbc=bbc_news,
                                google_news=google_news,aljaazera=aljaazera_news)
 
+
+@main.route('/articles/<source>')
+def articles(source):
+    """Default function that renders the default page"""
+    article=get_articles_news(source)
+    title = "Flask News Application"
+    return render_template("articles.html",title=title,articles=article)
