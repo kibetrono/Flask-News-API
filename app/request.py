@@ -101,3 +101,32 @@ def process_results_articles(news_articles):
             news_articles_process_results.append(news_object)
 
     return news_articles_process_results
+
+
+
+def articles_category(category):
+    articles_url = 'https://newsapi.org/v2/top-headlines?category={}&apiKey={}'.format(category, api_key)
+
+    article_data = requests.get(articles_url).json()
+
+    article_data_list = None
+    if article_data['articles']:
+        news_articles_response = article_data['articles']
+        article_data_list = process_results_articles(news_articles_response)
+
+    return article_data_list
+
+
+def search_news(news_name):
+    search_news_headlines= 'https://newsapi.org/v2/everything?q={}&apiKey={}'.format(news_name,api_key)
+
+    article_data = requests.get(search_news_headlines).json()
+
+    search_results = None
+
+    if article_data['articles']:
+        search_movie_list = article_data['articles']
+        search_results = process_results_articles(search_movie_list)
+
+
+    return search_results
