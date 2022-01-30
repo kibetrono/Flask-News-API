@@ -1,0 +1,36 @@
+{%extends 'base.html'%} {% import 'macros.html' as macro%}
+<!-- Styles block -->
+
+
+<!-- Content block -->
+{% block content %}
+<div class="container-fluid">
+<div class="top_section_sports"></div>
+    <!---------------------sources---------------------------->
+    <div>
+        <div class="row" >
+            
+            <div class="col-md-10">
+               
+                <div class="row ">
+                    <h3 class="text-center"> <u>POLITICS NEWS:</u></h3>
+                    {{ macro.displayArticles(politics) }}
+                </div>                       
+            </div>
+            <div class="col-md-2 mt-4">
+                <h3 class="text-center"> <u>TOP SOURCES:</u></h3>
+                {{macro.displayAllSources(my_sources)}}
+            </div>
+
+        </div>
+
+    </div>
+
+ 
+
+
+    {% endblock%}
+  
+
+
+</div>
