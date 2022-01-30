@@ -81,3 +81,15 @@ def politics():
 
         politics_news=articles_category('politics')
         return render_template('politics.html',politics=politics_news,my_sources=sourcess)
+
+
+@main.route('/search/<news_name>')
+def search(news_name):
+    """method to fetch search results"""
+    news_name_list = news_name.split(" ")
+    search_name_format = "+".join(news_name_list)
+    searched_results = search_news(search_name_format)
+    sourcess=get_source_news()
+
+    title = f'search results for {news_name}'
+    return render_template('search.html', results=searched_results,my_sources=sourcess)
