@@ -72,3 +72,12 @@ def entertainment():
 
     entertainment=articles_category('entertainment')
     return render_template("entertainment.html",entertainment=entertainment,my_sources=sourcess)
+
+
+@main.route('/politics')
+def politics():
+        """method to fetch politics data"""
+        sourcess=get_source_news()
+
+        politics_news=articles_category('politics')
+        return render_template('politics.html',politics=politics_news,my_sources=sourcess)
