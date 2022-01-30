@@ -1,0 +1,60 @@
+
+{% macro displayAllSources(all_available_sources)%}
+{%for source in all_available_sources%}
+
+<button class="btn-md"><a  href='/articles/{{source.id}}'> {{source.name}}</a></button>
+
+{%endfor%}
+{%endmacro%}
+
+
+
+{% macro displayArticles(news_articles) %}
+
+{% for article in news_articles %}
+
+<div class="col-md-3 section">
+    <div class="card mb-4 section_two">
+       {%if article.urlToImage%}
+        <img src="{{ article.urlToImage }}" class="card-img-top" alt="{{ article.title }}">
+        {%endif%}
+        <div class="card-body">
+            <h3 class="">
+                <a href="{{ article.url }}">{{ article.title[:55] }}---</a>
+            </h3>
+            <h4 class="card-text">{{ article.description[:110] }}...</h4>
+            <div class="d-flex justify-content-around">
+                <div>
+                    <p>Published on: {{ article.publishedAt[:10] }}</p>
+                
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endfor %}
+
+{% endmacro %}
