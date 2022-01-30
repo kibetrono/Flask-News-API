@@ -63,3 +63,12 @@ def bussiness():
 
     all_bussinesses=articles_category('business')
     return render_template("bussiness.html",bussiness=all_bussinesses,my_sources=sourcess)
+
+
+@main.route('/entertainment')
+def entertainment():
+    """method to fetch bussiness data"""
+    sourcess=get_source_news()
+
+    entertainment=articles_category('entertainment')
+    return render_template("entertainment.html",entertainment=entertainment,my_sources=sourcess)
