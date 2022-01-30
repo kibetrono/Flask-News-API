@@ -1,0 +1,51 @@
+{%extends 'base.html'%} {% import 'macros.html' as macro%}
+<!-- Styles block -->
+
+
+<!-- Content block -->
+{% block content %}
+<div class="container-fluid">
+<div class="top_section_index"></div>
+
+    <!---------------------sources---------------------------->
+    <div>
+
+        <div class="row" >
+            
+            <div class="col-md-10">
+<!--                <form>-->
+<!--                    <input type="text" name="news_query" placeholder="Search for you favourite news">-->
+<!--                    <input type="submit" class="btn btn-primary" value="Submit" class="btn btn-default">-->
+<!--                </form>-->
+
+                <div class="row  d-inline-flex">
+                    <h3 class="text-center"><u>BBC NEWS:</u></h3>
+
+                    {{ macro.displayArticles(my_bbc) }}
+                </div>
+                
+                      
+                
+                <div class="row ">
+                    <h3 class="text-center"> <u>AL JAZEERA NEWS:</u></h3>
+                    {{ macro.displayArticles(aljaazera) }}
+                </div>                       
+            </div>
+            <div class="col-md-2 mt-4">
+                <h3 class="text-center"> <u>TOP SOURCES:</u></h3>
+
+                {{macro.displayAllSources(my_sources)}}
+            </div>
+
+        </div>
+
+    </div>
+
+ 
+
+
+    {% endblock%}
+  
+
+
+</div>
