@@ -18,3 +18,36 @@ def configure_request(app):
     articles_url = app.config['NEWS_API_ARTICLES_URL']
     category_url = app.config['NEWS_ART_BASE']
 
+# ----------------------------------------Sources----------------------------------
+
+def get_source_news():
+    '''Function that gets the json response to our url request'''
+    get_news_source_url = 'https://newsapi.org/v2/sources?apiKey={}'.format(api_key)
+    news_data_response = requests.get(get_news_source_url).json()
+    news_results = None
+
+    if news_data_response['sources']:
+        news_results_list = news_data_response['sources']
+        news_results = process_results_sources(news_results_list)
+
+    return news_results
+
+
+def process_results_sources(news_list):
+    """Function  that processes the news results and transform them to a list of Objects"""
+    news_results = []
+
+    for eachnews in news_list:
+        id = eachnews.get('id')
+        name = eachnews.get('name')
+        description = eachnews.get('description')
+        url = eachnews.get('url')
+        category = eachnews.get('category')
+        language = eachnews.get('language')
+        country = eachnews.get('country')
+
+        news_object = NewsSource(id, name, description, url, category, language, country)
+
+        news_results.append(news_object)
+
+    return news_results
