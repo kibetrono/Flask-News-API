@@ -10,7 +10,7 @@ def index():
     bbc_news = articles_source('bbc-news', '8')
     aljaazera_news= articles_source('al-jazeera-english', '8')
     google_news = articles_source('google-news',8)
-    title = "Flask News Application"
+    title = "Flask News API Application"
 
     search_news=request.args.get('news_query')
     if search_news:
