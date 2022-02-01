@@ -29,7 +29,7 @@ Flask News Api application allows  users to access and see latest news.This appl
 
 ## Live Link
 
-[Click Here](https://davidkibetrono.github.io/Pizza-App/) to view Flask News API
+[Click Here]( https://flask-news-application.herokuapp.com/) to view Flask News API Application
 
 ##  contact details 
 * Email Address: kibetdavidro@gmail.com
